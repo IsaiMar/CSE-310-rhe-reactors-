@@ -3,6 +3,9 @@
 # private variables
 .env
 
+# private variables
+.env
+
 # dependencies
 /node_modules
 /.pnp
