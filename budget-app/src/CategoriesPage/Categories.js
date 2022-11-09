@@ -2,7 +2,14 @@ import '../App.css';
 
 const Categories = () => {
 
+    // const [api] = useState('http://localhost:5500/categories');
+    // const onSubmit = (event) => {
+    //     event.preventDefault();
+    //     props.setHandler(api);
+    // };
+
 return (
+    
     <div id="main">
         <div id="">
             <h1 id="title">Learn About The Budget Categories</h1>
@@ -13,7 +20,7 @@ return (
                 <p><a href="#food">Food</a></p>
                 <p><a href="#savings">Savings</a></p>
                 <p><a href="#e-fund">Emergency Fund</a></p>
-                <p><a href="#utilies">Utilities</a></p>
+                <p><a href="#utilities">Utilities</a></p>
             </div>
             <div id="rent">
                 <h1>Rent</h1>
