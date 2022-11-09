@@ -8,6 +8,14 @@ import Home from './Home';
 import './App.css';
 import Navbar from './Navbar';
 import "./index.css";
+import Categories from './CategoriesPage/Categories';
+import { 
+  BrowserRouter as Router, 
+  Switch, 
+  Route, 
+  Redirect,} 
+  from "react-router-dom";
+import { Menu } from './Menu';
 
 function App() {
   return (

@@ -1,3 +1,6 @@
+import Categories from './CategoriesPage/Categories';
+import { Link } from "react-router-dom";
+
 export const Menu = [
     {
         title: "Home",
@@ -7,7 +10,7 @@ export const Menu = [
     },
     {
         title: "Categories",
-        url: '#',
+        url: <link to={"./CategoriesPage/Categories"}></link>,
         cName: 'nav-links',
         icon: 'fa-solid fa-list', 
     },
