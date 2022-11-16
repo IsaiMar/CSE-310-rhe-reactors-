@@ -4,19 +4,19 @@ import { Link } from "react-router-dom";
 export const Menu = [
     {
         title: "Home",
-        url: '#',
+        url: '/',
         cName: 'nav-links',
         icon: 'fa-solid fa-house-user', 
     },
     {
         title: "Categories",
-        url: <link to={"./CategoriesPage/Categories"}></link>,
+        url: "/Categories",
         cName: 'nav-links',
         icon: 'fa-solid fa-list', 
     },
     {
         title: "MyBudget",
-        url: '#',
+        url: '/Budget',
         cName: 'nav-links',
         icon: 'fa-solid fa-coins', 
     },

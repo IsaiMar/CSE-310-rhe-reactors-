@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import "./Navbar.css";
 import {Menu} from './Menu'
+import {Link} from "react-router-dom";
 
-
+console.log(Menu);
 
 class Navbar extends Component{
   render(){
@@ -18,9 +19,9 @@ class Navbar extends Component{
           {Menu.map((item,index)=>{
             return(
               <li key = {index}>
-                <a href={item.url}
-                className = {item.cName}>
-              <i className={item.icon}> </i> {item.title}</a>
+                <Link to={item.url} className={item.cName}>
+                  <i className={item.icon}> </i> {item.title}
+                </Link>
               </li>
             )
           })}
