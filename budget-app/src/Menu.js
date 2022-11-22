@@ -1,5 +1,5 @@
-import Categories from './CategoriesPage/Categories';
-import { Link } from "react-router-dom";
+// import Categories from './CategoriesPage/Categories';
+// import { Link } from "react-router-dom";
 
 export const Menu = [
     {

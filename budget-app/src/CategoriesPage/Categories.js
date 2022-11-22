@@ -1,6 +1,33 @@
 import '../App.css';
+import React, {useState, useEffect} from 'react';
+import {getHousing, getFoodGroceries, getSavings, getEmergencyFund, getTransportation, getUtilities} from '../utils/getMethods';
+const Categories =() => {
+    const [rent, setRent] = useState([]);
+    const [food, setFood] = useState([]);
+    const [saving, setSaving] = useState([]);
+    const [emerge, setEmerge] = useState([]);
+    const [transport, setTransport] = useState([]);
+    const [util, setUtil] = useState([]);
 
-const Categories = () => {
+    useEffect(() => {
+        getHousing().then(setRent)
+    }, [])
+
+    useEffect(() => {
+        getFoodGroceries().then(setFood)
+    }, [])
+    useEffect(() => {
+        getSavings().then(setSaving)
+    }, [])
+    useEffect(() => {
+        getEmergencyFund().then(setEmerge)
+    }, [])
+    useEffect(() => {
+        getTransportation().then(setTransport)
+    }, [])
+    useEffect(() => {
+        getUtilities().then(setUtil)
+    }, [])
 
 return (
     <div id="main">
@@ -16,9 +43,13 @@ return (
                 <p><a href="#utilies">Utilities</a></p>
             </div>
             <div id="rent">
-                <h1>Rent</h1>
-                <p>The things that go into housing would be a mortgage or rent, and usually home repairs.
-                <br/><br />
+                <h1> {rent.category} </h1>
+                <p>{rent.description}
+                    <br/><br />
+                    Importance: {rent.importance}
+                    <br/><br />
+                    Due Date: {rent.due_date}
+                {/* <br/><br />
                 Mortgage: a loan from a bank or other financial institution that helps a borrower purchase a home. 
                 It is paid when the borrower and the financial institution agree that it should be paid. 
                 <br /><br />
@@ -26,13 +57,18 @@ return (
                 Usually it is paid on the first of the month. 
                 <br /><br />
                 It is usually important to save some money for home repairs because you never know when something 
-                will break or just run down. An example of a home repair would be a bathroom remodel or fixing your kitchen sink. 
+                will break or just run down. An example of a home repair would be a bathroom remodel or fixing your kitchen sink.  */}
                 </p>  
             </div>
                 
             <div id="food">
-                <h1>Food/Groceries</h1>
-                <p>Basically, what you are going to eat in the next month. Yes, you are going to cook for yourself, 
+                <h1>{food.category}</h1>
+                 <p>{food.description}
+                      <br/><br />
+                    Importance: {food.importance}
+                    <br/><br />
+                    Due Date: {food.due_date}
+                 {/*Basically, what you are going to eat in the next month. Yes, you are going to cook for yourself, 
                     unless you want to spend 3 times as much money eating out (who can afford that?). 
                     There`s different ways to budget for this, here are some suggestions:
                     <br /><br />
@@ -42,34 +78,49 @@ return (
                     paper towels, etc. Don`t be afraid of getting good toilet paper, sometimes quality is better than saving a couple bucks.
                     <br /><br />
                     Some weeks are going to be more expensive than others. You should look back at how much you 
-                    spent in the past weeks and plan to spend the average amount of that. If you can`t afford it, plan cheaper meals.
+                    spent in the past weeks and plan to spend the average amount of that. If you can`t afford it, plan cheaper meals. */}
                     </p>
             </div>
             <div id="savings">
-                <h1>Savings</h1>
-                <p>Description - Savings could be money or investments. 
+                <h1>{saving.category}</h1>
+                <p> Description: {saving.description}
+                    <br/><br />
+                    Importance: {saving.importance}
+                    <br/><br />
+                    Due Date: {saving.due_date}
+                    {/*Description - Savings could be money or investments. 
                     Meaning - Savings means the money one has saved, especially through a bank or investment plan.
                     Importance - Savings are important for rainy days. Savings ensures that a person is able to maintain their 
                     current lifestyle even after they stop working.
-                    Due Date - At every paycheck, the savings must be taken out from the paycheck and put into a savings account. 
+                Due Date - At every paycheck, the savings must be taken out from the paycheck and put into a savings account. */}
                     </p>
             </div>
             <div id="e-fund">
-                <h1>Emergency Fund</h1>
-                <p>Description - Emergency funds are money
+                <h1>{emerge.category}</h1>
+                <p> Description: {emerge.description}
+                    <br/><br />
+                    Importance: {emerge.importance}
+                    <br/><br />
+                    Due Date: {emerge.due_date}
+                    {/*Description - Emergency funds are money
                     Meaning - An emergency fund, also known as contingency fund, is a personal budget set aside as a financial 
                     safety net for future mishaps or unexpected expenses.
                     Importance - To avoid depending on credit cards or high interest loans on broke days.
-                    Due Date - At every paycheck the emergency funds must be taken out and put aside.
+                    Due Date - At every paycheck the emergency funds must be taken out and put aside. */}
                     </p>
             </div>
             <div id="utilities">
-                <h1>Utilities</h1>
-                <p>What are utilities: They are stuff like, Power, Gas, sewage, trash, internet, and water. 
+                <h1>{util.category}</h1>
+                <p> Description: {util.description}
+                    <br/><br />
+                    Importance: {util.importance}
+                    <br/><br />
+                    Due Date: {util.due_date}
+                    {/*What are utilities: They are stuff like, Power, Gas, sewage, trash, internet, and water. 
                     <br /><br />
                     These are usually due at the beginning of the month but some companies allow you to choose when it is paid by. 
                     <br /><br />
-                    Without paying utilities, you won`t be able to live and you could lose your apartment or pay penalties. 
+                    Without paying utilities, you won`t be able to live and you could lose your apartment or pay penalties.  */}
                     </p>
             </div>
         </div>

@@ -1,9 +1,7 @@
 import axios from "axios";
 
-const api = axios.create({
-    baseURL: `http://localhost:5500/`
-  })
-  
+const api = 'http://localhost:5500';
+
   /****************************************************************************
    * GET HOUSING
    * OUTPUT: This function returns all the information for housing in json
@@ -13,10 +11,18 @@ const api = axios.create({
    * DESCRIPTION: This function is called and then turns the housing data into
    *              json data.
   ****************************************************************************/
-  export async function getHousing()
+  export const getHousing = async() =>
   {
-    let data = await api.get('/1').then(({data})=> data);
-    return data.json();
+    let re = await axios.get(`${api}/1`);
+    const data = re.data.data[0];
+    const array = {
+      "category" : data.category,
+      "importance": data.importance,
+      "due_date" : data.due_date,
+      "description": data.description,
+      "Budget": data.Budget
+    };
+    return array;
   }
   
   /****************************************************************************
@@ -30,8 +36,16 @@ const api = axios.create({
   ****************************************************************************/
   export async function getFoodGroceries()
   {
-    let data = await api.get('/2').then(({data}) => data);
-    return data.json();
+    let re = await axios.get(`${api}/2`);
+    const data = re.data.data[0];
+    const array = {
+      "category" : data.category,
+      "importance": data.importance,
+      "due_date" : data.due_date,
+      "description": data.description,
+      "Budget": data.Budget
+    };
+    return array;
   }
   
   /****************************************************************************
@@ -45,8 +59,16 @@ const api = axios.create({
   ****************************************************************************/
   export async function getSavings()
   {
-    let data = await api.get('/3').then(({data}) => data);
-    return data.json();
+    let re = await axios.get(`${api}/3`);
+    const data = re.data.data[0];
+    const array = {
+      "category" : data.category,
+      "importance": data.importance,
+      "due_date" : data.due_date,
+      "description": data.description,
+      "Budget": data.Budget
+    };
+    return array;
   }
   
   /****************************************************************************
@@ -60,8 +82,16 @@ const api = axios.create({
   ****************************************************************************/
   export async function getEmergencyFund()
   {
-    let data = await api.get('/4').then(({data}) => data);
-    return data.json();
+    let re = await axios.get(`${api}/4`);
+    const data = re.data.data[0];
+    const array = {
+      "category" : data.category,
+      "importance": data.importance,
+      "due_date" : data.due_date,
+      "description": data.description,
+      "Budget": data.Budget
+    };
+    return array;
   }
   
   /****************************************************************************
@@ -75,8 +105,16 @@ const api = axios.create({
   ****************************************************************************/
   export async function getTransportation()
   {
-    let data = await api.get('/5').then(({data}) => data);
-    return data.json();
+    let re = await axios.get(`${api}/5`);
+    const data = re.data.data[0];
+    const array = {
+      "category" : data.category,
+      "importance": data.importance,
+      "due_date" : data.due_date,
+      "description": data.description,
+      "Budget": data.Budget
+    };
+    return array;
   }
   
   /****************************************************************************
@@ -90,6 +128,14 @@ const api = axios.create({
   ****************************************************************************/
   export async function getUtilities()
   {
-    let data = await api.get('/6').then(({data}) => data);
-    return data.json();
+    let re = await axios.get(`${api}/6`);
+    const data = re.data.data[0];
+    const array = {
+      "category" : data.category,
+      "importance": data.importance,
+      "due_date" : data.due_date,
+      "description": data.description,
+      "Budget": data.Budget
+    };
+    return array;
   }
