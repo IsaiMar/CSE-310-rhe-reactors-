@@ -14,7 +14,7 @@ const api = 'http://localhost:5500';
   export const getHousing = async() =>
   {
     let re = await axios.get(`${api}/1`);
-    const data = re.data.data[0];
+    const data = re.data[0];
     const array = {
       "category" : data.category,
       "importance": data.importance,
@@ -37,7 +37,7 @@ const api = 'http://localhost:5500';
   export async function getFoodGroceries()
   {
     let re = await axios.get(`${api}/2`);
-    const data = re.data.data[0];
+    const data = re.data[0];
     const array = {
       "category" : data.category,
       "importance": data.importance,
@@ -60,7 +60,7 @@ const api = 'http://localhost:5500';
   export async function getSavings()
   {
     let re = await axios.get(`${api}/3`);
-    const data = re.data.data[0];
+    const data = re.data[0];
     const array = {
       "category" : data.category,
       "importance": data.importance,
@@ -83,7 +83,7 @@ const api = 'http://localhost:5500';
   export async function getEmergencyFund()
   {
     let re = await axios.get(`${api}/4`);
-    const data = re.data.data[0];
+    const data = re.data[0];
     const array = {
       "category" : data.category,
       "importance": data.importance,
@@ -106,7 +106,7 @@ const api = 'http://localhost:5500';
   export async function getTransportation()
   {
     let re = await axios.get(`${api}/5`);
-    const data = re.data.data[0];
+    const data = re.data[0];
     const array = {
       "category" : data.category,
       "importance": data.importance,
@@ -129,7 +129,7 @@ const api = 'http://localhost:5500';
   export async function getUtilities()
   {
     let re = await axios.get(`${api}/6`);
-    const data = re.data.data[0];
+    const data = re.data[0];
     const array = {
       "category" : data.category,
       "importance": data.importance,

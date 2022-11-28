@@ -9,6 +9,11 @@ const Categories =() => {
     const [transport, setTransport] = useState([]);
     const [util, setUtil] = useState([]);
 
+    /**************************************************************************
+     * USE EFFECTS
+     * These functions allow for the retrieval of the data from the database
+     * Also it allows us to put information into the database as well.
+    **************************************************************************/
     useEffect(() => {
         getHousing().then(setRent)
     }, [])
@@ -49,6 +54,7 @@ return (
                     Importance: {rent.importance}
                     <br/><br />
                     Due Date: {rent.due_date}
+                    <br/><br />
                 {/* <br/><br />
                 Mortgage: a loan from a bank or other financial institution that helps a borrower purchase a home. 
                 It is paid when the borrower and the financial institution agree that it should be paid. 
@@ -68,6 +74,7 @@ return (
                     Importance: {food.importance}
                     <br/><br />
                     Due Date: {food.due_date}
+                    <br/><br />
                  {/*Basically, what you are going to eat in the next month. Yes, you are going to cook for yourself, 
                     unless you want to spend 3 times as much money eating out (who can afford that?). 
                     There`s different ways to budget for this, here are some suggestions:
@@ -88,6 +95,7 @@ return (
                     Importance: {saving.importance}
                     <br/><br />
                     Due Date: {saving.due_date}
+                    <br/><br />
                     {/*Description - Savings could be money or investments. 
                     Meaning - Savings means the money one has saved, especially through a bank or investment plan.
                     Importance - Savings are important for rainy days. Savings ensures that a person is able to maintain their 
@@ -102,6 +110,7 @@ return (
                     Importance: {emerge.importance}
                     <br/><br />
                     Due Date: {emerge.due_date}
+                    <br/><br />
                     {/*Description - Emergency funds are money
                     Meaning - An emergency fund, also known as contingency fund, is a personal budget set aside as a financial 
                     safety net for future mishaps or unexpected expenses.
@@ -116,6 +125,7 @@ return (
                     Importance: {util.importance}
                     <br/><br />
                     Due Date: {util.due_date}
+                    <br/><br />
                     {/*What are utilities: They are stuff like, Power, Gas, sewage, trash, internet, and water. 
                     <br /><br />
                     These are usually due at the beginning of the month but some companies allow you to choose when it is paid by. 
