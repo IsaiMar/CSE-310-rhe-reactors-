@@ -1,4 +1,3 @@
-
 import { AddTransaction } from "./AddTransaction";
 import { Balance } from "./Balance";
 import { Header } from "./Header";
