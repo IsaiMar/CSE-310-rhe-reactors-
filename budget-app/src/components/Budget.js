@@ -10,9 +10,9 @@ export default function Budget(){
         <div>
             <Header/>
             <AddTransaction/>
-            <Balance/>
             <IncomeExpenses/>
             <TransactionList/>
+            <Balance/>
         </div>
     );
 }
