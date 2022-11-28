@@ -5,6 +5,10 @@ import {Link} from "react-router-dom";
 
 console.log(Menu);
 
+/* This class is the Navigation bar, it will display the navigation bar in all the pages,
+  this one will be the one in charge of enabling the change between pages. These pages are Home, Categories and 
+  Budget. 
+ */
 class Navbar extends Component{
   render(){
     return (
