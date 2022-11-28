@@ -7,12 +7,9 @@
 * {
   box-sizing: border-box;
 }
-/* my code */
-/* .create-budget{
-  text-align: right;
-} */
+
 body {
-  background-color: #f7f7f7;
+  background: linear-gradient(90deg, rgba(246,226,127,1) 0%, rgba(226,195,144,1) 51%, rgba(147,210,226,1) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -157,17 +154,17 @@ input[type='number'] {
 
 #title {
   padding-left: 10%;
-  padding-top: 3%;
+  padding-top: 10%;
   padding-bottom: 3%;
 }
 
 
 #categories {
   display: grid;
+  padding: 150px;
   padding-left: 15%;
   padding-right: 20%;
   padding-bottom: 8%;
-
 }
 
 #categories p {
