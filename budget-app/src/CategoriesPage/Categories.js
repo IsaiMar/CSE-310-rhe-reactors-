@@ -53,6 +53,8 @@ return (
                 <div><a href="#savings">Savings</a><br/></div>
                 <div><a href="#e-fund">Emergency Fund</a><br/></div>
                 <div><a href="#utilities">Utilities</a></div>
+                <div><a href="#transportation">Transportation</a></div>
+
             </div>
             <div id="info">
                 <div id="rent">
@@ -142,7 +144,7 @@ return (
                         </p>
                 </div>
                 
-                <div id="transport">
+                <div id="transportation">
                     <h1>{transport.category}</h1>
                     <p> {transport.description}
                         <br/><br />
