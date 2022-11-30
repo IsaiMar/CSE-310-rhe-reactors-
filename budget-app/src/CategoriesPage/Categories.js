@@ -9,6 +9,10 @@ const Categories =() => {
     const [transport, setTransport] = useState([]);
     const [util, setUtil] = useState([]);
 
+    // const img = document.createElement("img");
+    // img.src = "images/home.png";
+    // document.body.appendChild(img);
+
     /**************************************************************************
      * USE EFFECTS
      * These functions allow for the retrieval of the data from the database
@@ -160,7 +164,7 @@ return (
             
         </div>
         <div id="footer">
-            <p></p>
+            <p>hello Im a footer</p>
         </div>
     </div>
 )
