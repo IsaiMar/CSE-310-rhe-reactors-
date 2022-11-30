@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-
-:root {
-  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@500&family=Montserrat:wght@600&family=Raleway:wght@500&display=swap');
 * {
   box-sizing: border-box;
 }
@@ -152,16 +148,48 @@ input[type='number'] {
 
 
 
-#title {
-  padding-left: 10%;
-  padding-top: 10%;
-  padding-bottom: 3%;
+
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+
+#shortcuts {
+  background-color: rgb(142, 143, 143);
+  border-radius: 10%;
+  padding: 5%;
+  width: 50%;
+  margin-bottom: 50px;
+}
+#shortcuts a {
+  font-family: 'Raleway', Helvetica, sans-serif;
+  color: rgb(255, 249, 223);
+  width: 50%;
+  font-size: 25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#shortcuts a:hover {
+  color: rgb(10, 10, 10);
+}
+#shortcuts div {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
+#categories-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 25px;
+  padding-left: 15%;
+  padding-top: 13%;
+  padding-bottom: 3%;
+}
+
 #categories {
   display: grid;
-  padding: 150px;
+  /* padding: 150px; */
+  padding-top: 70px;
   padding-left: 15%;
   padding-right: 20%;
   padding-bottom: 8%;
@@ -169,4 +197,25 @@ input[type='number'] {
 
 #categories p {
   padding-left: 0%;
+  font-size: 20px;
+  font-family: 'Raleway', Helvetica, sans-serif;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+}
+
+#categories h1 {
+  font-family: 'Hind+Madurai', Helvetica ,sans-serif;
+  font-size: 40px;
+  padding-top: 12%;
+}
+
+#info {
+  display: grid;
+  border-radius: 50px;
+  padding-left: 5%;
+  padding-right: 10%;
+  padding-bottom: 8%;
+  background-color: rgba(78, 78, 78, 0.418);
+
 }
