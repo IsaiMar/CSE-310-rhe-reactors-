@@ -85,7 +85,7 @@ const AddExpenseForm = (props) => {
 
                     <option>{props.emerge.category}</option>  
 
-                    <option>{props.transport.category}n</option>  
+                    <option>{props.transport.category}</option>  
 
                     <option>{props.util.category}</option>  
 					</select>
