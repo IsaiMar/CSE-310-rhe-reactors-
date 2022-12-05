@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../Context/AppContext';
 
-const Budget = () => {
+const Budget = (props) => {
 	const { budget } = useContext(AppContext);
 	return (
 		<div className='alert alert-secondary'>
