@@ -81,7 +81,7 @@ const AddExpenseForm = (props) => {
 
                     <option>{props.food.category}</option>  
 
-                    <option>{props.saving.category}s</option>  
+                    <option>{props.saving.category}</option>  
 
                     <option>{props.emerge.category}</option>  
 
