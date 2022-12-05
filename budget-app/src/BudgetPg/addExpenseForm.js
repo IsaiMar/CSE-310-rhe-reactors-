@@ -1,40 +1,13 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState} from 'react';
 import { AppContext } from '../Context/AppContext';
 import { v4 as uuidv4 } from 'uuid';
-import {getHousing, getFoodGroceries, getSavings, getEmergencyFund, getTransportation, getUtilities} from '../utils/getMethods';
 import {NewBudget, newBudget} from '../utils/putMethods';
+import { DropDownList } from '@progress/kendo-react-dropdowns';
 
-const AddExpenseForm = () => {
-	
-    const [name, setName] = useState('');
-	const [cost, setCost] = useState('');
-	const [rent, setRent] = useState([]);
-	const [food, setFood] = useState([]);
-	const [saving, setSaving] = useState([]);
-	const [emerge, setEmerge] = useState([]);
-	const [transport, setTransport] = useState([]);
-	const [util, setUtil] = useState([]);
+const AddExpenseForm = (props) => {
 	const { dispatch } = useContext(AppContext);
-
-	useEffect(() => {
-		getHousing().then(setRent)
-	}, [])
-
-	useEffect(() => {
-		getFoodGroceries().then(setFood)
-	}, [])
-	useEffect(() => {
-		getSavings().then(setSaving)
-	}, [])
-	useEffect(() => {
-		getEmergencyFund().then(setEmerge)
-	}, [])
-	useEffect(() => {
-		getTransportation().then(setTransport)
-	}, [])
-	useEffect(() => {
-		getUtilities().then(setUtil)
-	}, [])
+	// const [name, setName] = useState('');
+	// const [cost, setCost] = useState('');
 
     const OnSubmit = (event) => {
 
@@ -48,36 +21,36 @@ const AddExpenseForm = () => {
 		
 		const expense = {
 			id: uuidv4(),
-			name: name,
-			cost: parseInt(cost),
+			name: props.name,
+			cost: parseInt(props.cost),
 		}
 
-		if(expense.name == rent.category)
+		if(props.name == props.rent.category)
 		{
 			expense.id = '1';
 			NewBudget(1, expense.cost);
 		}
-		else if(expense.name == food.category)
+		else if(props.name == props.food.category)
 		{
 			expense.id = '2';
 			NewBudget(2, expense.cost);
 		}
-		else if(expense.name == saving.category)
+		else if(props.name == props.saving.category)
 		{
 			expense.id = '3';
 			NewBudget(3, expense.cost);
 		}
-		else if(expense.name == emerge.category)
+		else if(props.name == props.emerge.category)
 		{
 			expense.id = '4';
 			NewBudget(4, expense.cost);
 		}
-		else if(expense.name == transport.category)
+		else if(props.name == props.transport.category)
 		{
 			expense.id = '5';
 			NewBudget(5, expense.cost);
 		}
-		else if(expense.name == util.category)
+		else if(props.name == props.util.category)
 		{
 			expense.id = '6';
 			NewBudget(6, expense.cost);
@@ -85,9 +58,9 @@ const AddExpenseForm = () => {
 
 		dispatch({
 			type: 'ADD_EXPENSE',
-			payload: expense,
+			payload: props.expense,
 		});
-
+		window.location.reload();
 	};
 
 	return (
@@ -95,14 +68,27 @@ const AddExpenseForm = () => {
 			<div className='row'>
 				<div className='col-sm'>
 					<label htmlFor='name'>Name</label>
-					<input
-						required='required'
-						type='text'
-						className='form-control'
-						id='name'
-						value={name}
-						onChange={(event) => setName(event.target.value)}
-					></input>
+					<select
+					required='required'
+					type='text'
+					className='form-control'
+					id='name'
+					value={props.name}
+					onChange={(event) => props.setName(event.target.value)}>
+					<option> ---Choose category--- </option>  
+
+                    <option>{props.rent.category}</option>  
+
+                    <option>{props.food.category}</option>  
+
+                    <option>{props.saving.category}s</option>  
+
+                    <option>{props.emerge.category}</option>  
+
+                    <option>{props.transport.category}n</option>  
+
+                    <option>{props.util.category}</option>  
+					</select>
 				</div>
 				<div className='col-sm'>
 					<label htmlFor='cost'>Cost</label>
@@ -111,8 +97,8 @@ const AddExpenseForm = () => {
 						type='text'
 						className='form-control'
 						id='cost'
-						value={cost}
-						onChange={(event) => setCost(event.target.value)}
+						value={props.cost}
+						onChange={(event) => props.setCost(event.target.value)}
 					></input>
 				</div>
 				<div className='col-sm'>
